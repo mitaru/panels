@@ -25,7 +25,7 @@ header {
   border-radius: 0 0 40% 40%;
 }
 
-.captionText p{
+.captionText p {
   margin-bottom: 50px;
 }
 
@@ -70,7 +70,7 @@ header {
 }
 
 section {
-	justify-content: center;
+  justify-content: center;
   align-items: center;
 }
 
@@ -87,7 +87,7 @@ input {
 }
 
 .resultText {
-  background: rgba(118,109,244,0.08) !important;
+  background: rgba(118, 109, 244, 0.08) !important;
   color: #766df4 !important;
   font-size: 20px;
   padding: 0 10px;
@@ -104,20 +104,28 @@ input {
   text-align: center;
   line-height: 100px;
   cursor: pointer;
-  user-select:none
+  user-select: none
 }
 
 .filled {
-  background-color   : #fff;
-  background-image   : radial-gradient(#16C995 14%, transparent 17%),
-                       radial-gradient(#16C995 14%, transparent 17%);
+  background-color: #fff;
+  background-image: radial-gradient(#16C995 14%, transparent 17%), radial-gradient(#16C995 14%, transparent 17%);
   background-position: 0 0, 4px 4px;
-  background-size    : 8px 8px;
-  }
+  background-size: 8px 8px;
+}
 
 footer {
   background: #F7F7FC;
   clear: both;
+}
+
+a .fa-github {
+  font-size: 30px;
+  color: #333;
+}
+
+a .fa-github:hover {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 480px) {
@@ -126,4 +134,4 @@ footer {
     height: 70px;
     line-height: 70px;
   }
- }
+}
