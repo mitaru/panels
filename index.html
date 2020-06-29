@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>あと何コマ？</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="panels.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+
+  <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4">
+    <!-- <h5 class="my-md-0 mr-md-auto font-weight-normal">あと何コマ？</h5> -->
+    <nav class="mt-2 my-md-0 mr-md-3">
+      <a class="px-2 text-white" href="#paneldiv">あと何コマ？</a>
+      <a class="px-2 text-white" href="#timediv">あと何分？</a>
+    </nav>
+  </header>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container captionText">
+      <p>コマ数で進捗管理するツールです。残りコマ数を入力して、入力完了ボタンを押してください。<br>
+        1コマ辺りの作業時間を入力すると、残りの作業時間がわかります。
+      </p>
+    </div>
+  </div>
+
+  <div id="app" class="mb-5">
+    <div class="container main py-4 mt-sm-3">
+
+      <article class="text-center pt-3 pb-4" id="paneldiv">
+        <div class="alertArea text-center mb-3">
+          <strong v-show="alertShow">
+            コマ数を入力してください
+          </strong>
+        </div>
+        <h3 v-if="!resultShow">
+          あと<input type="number" v-model.number="remainedPanelsInput" min="0" class="panelInput">コマ？
+          <button type="button" class="ml-2 btn page-link text-light d-inline-block btn-purple" @click="resultShowFunc"
+            v-if="!resultShow">入力完了</button>
+        </h3>
+
+        <h3 v-else>
+          全<input type="number" v-model.number="remainedPanelsInput" min="0" class="panelInput">コマ
+          <button type="button" class="ml-2 btn page-link text-light d-inline-block btn-purple" @click="resultReset"
+            v-if="resultShow">リセット</button>
+        </h3>
+
+        <div v-show="resultShow">
+          全{{ remainedPanelsInput }}コマ－
+          済み<input type="number" v-model.number="filledPanels" v-bind:max="remainedPanelsInput" min="0">コマ
+          ＝
+          あと<span class="resultText">{{ remainedPanelsNumber }}</span>コマ
+          <p class="text-muted pt-3">終わったコマをクリックすると、塗りつぶされて完了状態になります。完了状態のコマをクリックすると未完の状態に戻ります。</p>
+        </div>
+        <section class="row pricing-header px-3 py-3 pt-md-3 pb-md-1 mx-auto text-center" v-show="resultShow">
+          <div class="panel" v-for="n in remainedPanelsNumber" @click="panelFinished">
+            <div class="panelInner">{{ n }}</div>
+          </div>
+          <div class="panel filled" v-for="n in filledPanels" @click="panelReturn"></div>
+        </section>
+      </article>
+
+      <article class="text-center" id="timediv" v-show="resultShow">
+        <h3>あと何分？</h3>
+        <div>
+          1コマ辺りの作業時間<input class="inputPerPanel" type="number" v-model.number="
+          perPanel" min="0">分×残り{{ remainedPanelsNumber }}コマ＝
+          あと<span class="resultText">{{ remainingTime }}</span>分
+          （{{ remainingHour }}時間）
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <footer class="py-3">
+    <div class="text-center">&copy; 2017-2019</div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+    integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd"
+    crossorigin="anonymous"></script>
+  <script src="panels.js"></script>
+</body>
+
+</html>
