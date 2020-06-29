@@ -1,0 +1,129 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  color: rgb(31, 45, 65);
+  background: #F7F7FC;
+}
+
+header {
+  background: #37384E;
+  color: #fff;
+}
+
+.jumbotron {
+  margin: 0;
+  background: #37384E;
+  color: #fff;
+  border-radius: 0 0 40% 40%;
+}
+
+.captionText p{
+  margin-bottom: 50px;
+}
+
+.text-muted {
+  color: #9e9fb4 !important;
+  font-size: 14px;
+  margin: 0;
+}
+
+.main {
+  max-width: 2000px;
+  background: #F7F7FC;
+}
+
+.alertArea {
+  height: 20px;
+}
+
+.alertArea strong {
+  background: rgba(255, 255, 255, 0.6) !important;
+  padding: 2px 5px;
+  border-radius: 4px;
+  color: #37384E;
+}
+
+.panelInput {
+  min-width: 10vw;
+}
+
+.btn-purple {
+  color: #fff;
+  background: #16C995;
+  border: 0;
+}
+
+.btn-purple:hover {
+  background: #0f926d;
+}
+
+.pricing-header {
+  max-width: 1000px;
+}
+
+section {
+	justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 50px;
+  border: 0;
+  background: #fff;
+  border-radius: 4px;
+  padding: 3px;
+  margin: 2px;
+  color: #766DF4;
+  font-weight: bold;
+  text-align: center;
+}
+
+.resultText {
+  background: rgba(118,109,244,0.08) !important;
+  color: #766df4 !important;
+  font-size: 20px;
+  padding: 0 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.panel {
+  width: 150px;
+  height: 100px;
+  background: #fff;
+  border: 5px solid #333;
+  margin: 4px;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+  user-select:none
+}
+
+.filled {
+  background-color   : #fff;
+  background-image   : radial-gradient(#16C995 14%, transparent 17%),
+                       radial-gradient(#16C995 14%, transparent 17%);
+  background-position: 0 0, 4px 4px;
+  background-size    : 8px 8px;
+  }
+
+footer {
+  background: #F7F7FC;
+  clear: both;
+}
+
+@media screen and (max-width: 480px) {
+  .panel {
+    width: 100px;
+    height: 70px;
+    line-height: 70px;
+  }
+ }
