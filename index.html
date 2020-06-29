@@ -5,8 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>あと何コマ？</title>
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+    integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
   <link rel="stylesheet" href="panels.css">
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
@@ -75,10 +79,26 @@
         </div>
       </article>
     </div>
+    <div class="contact text-center">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://mitaru.github.io/panels/"
+        data-text="進捗どうですか？あと何コマ" data-size="large" data-hashtags="あと何コマ">
+        Tweet
+      </a>
+    </div>
   </div>
 
-  <footer class="py-3">
-    <div class="text-center">&copy; 2017-2019</div>
+  <footer class="my-1 pt-5 text-muted text-center text-small">
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <a href="https://twitter.com/SakaiMitaru">
+          <i class="fab fa-twitter-square mr-1"></i>SakaiMitaru
+        </a>
+      </li>
+      <li class="list-inline-item"><a href="https://github.com/mitaru/panels.git">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+    </ul>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
